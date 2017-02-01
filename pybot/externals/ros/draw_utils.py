@@ -107,7 +107,7 @@ def publish_tf(pose, stamp=None, frame_id='/camera', child_frame_id='map'):
     x,y,z,w = pose.quat.to_xyzw()
     _publish_tf(tuple(pose.tvec), (x,y,z,w), rospy.Time.now(), frame_id, child_frame_id)
 
-@run_async
+# @run_async
 def publish_cloud(pub_ns, _arr, c='b', stamp=None, flip_rb=False, frame_id='map', seq=None): 
     """
     Publish point cloud on:
@@ -123,7 +123,7 @@ def publish_cloud(pub_ns, _arr, c='b', stamp=None, flip_rb=False, frame_id='map'
     pc = xyzrgb_array_to_pointcloud2(arr, carr, stamp=stamp, frame_id=frame_id, seq=seq)
     _publish_pc(pub_ns, pc)
 
-@run_async    
+# @run_async    
 def publish_cloud_markers(pub_ns, _arr, c='b', stamp=None, flip_rb=False, frame_id='map'): 
     """
     Publish point cloud on:
@@ -161,7 +161,7 @@ def publish_cloud_markers(pub_ns, _arr, c='b', stamp=None, flip_rb=False, frame_
     print 'Publishing marker', N
 
 
-@run_async    
+# @run_async    
 def publish_line_segments(pub_ns, _arr1, _arr2, c='b', stamp=None, frame_id='camera', flip_rb=False, size=0.002): 
     """
     Publish point cloud on:
@@ -217,7 +217,7 @@ def publish_pose(pose, stamp=None, frame_id='camera'):
 
     _publish_pose(msg)
 
-@run_async
+# @run_async
 def publish_pose_list(pub_ns, _poses, texts=[], stamp=None, size=0.05, frame_id='camera', seq=1):
     """
     Publish Pose List on:
